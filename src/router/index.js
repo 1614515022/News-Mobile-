@@ -1,22 +1,63 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Register from "../views/Register.vue"
+import Login from "../views/Login.vue"
+import Home from "../views/Home.vue"
+import detailArticle from "../views/detailArticle.vue"
+import searchArticle from "../views/searchArticle.vue"
+import personalCenter from "../views/personalCenter.vue"
+import mainSet from "../views/mainSet.vue"
+import editPage from "../views/editPage.vue"
+import collectionList from "../views/collectionList.vue"
+import readList from "../views/readList.vue"
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path:'/',
+    component: Home,
+    meta:{
+      keepAlive:true
+    }
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/register',
+    component: Register,
+    
+  },
+  {
+    path: '/login',
+    component: Login,
+  },
+  
+  {
+    path:'/detailArticle/:id',
+    component: detailArticle,
+  },
+  {
+    path:'/searchArticle',
+    component: searchArticle,
+  },
+  {
+    path:'/personalCenter',
+    component: personalCenter,
+  },
+  {
+    path:'/mainSet',
+    component: mainSet,
+  },
+  {
+    path:'/editPage',
+    component: editPage,
+  },
+  {
+    path:'/collectionList',
+    component: collectionList,
+  },
+  {
+    path:'/readList',
+    component: readList,
   }
 ]
 
