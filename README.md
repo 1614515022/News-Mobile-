@@ -1,5 +1,7 @@
 # News-Mobile-
-基于Vue+express的新闻web移动端
+
+基于 Vue+express 的新闻 web 移动端
+
 # myapp
 
 ## Project setup
@@ -13,3 +15,5 @@ npm install
 ```
 npm run serve
 ```
+
+###
