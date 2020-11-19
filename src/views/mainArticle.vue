@@ -13,7 +13,7 @@
           
         </span>
         <span>
-          <img v-if="$root._data.isPicture==true" :src="item1.photo">
+          <img v-if="$store.state.isPicture==true" :src="item1.photo">
           <img v-else src="../assets/2.jpg" />
         </span>
         
@@ -49,22 +49,22 @@ export default {
         },
         async toDetailArticle(item1){
           if(localStorage.getItem("token")){
-                //console.log(this.$root._data.collectionList)
+                //console.log(this.$store.state.collectionList)
 
-                //console.log(this.$root._data.collectionList);
-                if(this.$root._data.readList.length==0){
-                    await this.$root._data.readList.push(localStorage.getItem("readList"))
+                //console.log(this.$store.state.collectionList);
+                if(this.$store.state.readList.length==0){
+                    await this.$store.state.readList.push(localStorage.getItem("readList"))
                 }
                 //console.log(localStorage.getItem("readList").indexOf(item1.docid))
-                if(localStorage.getItem("readList")==null&&this.$root._data.readList.indexOf(item1.docid)==-1){
-                  await this.$root._data.readList.push(item1.docid)
+                if(localStorage.getItem("readList")==null&&this.$store.state.readList.indexOf(item1.docid)==-1){
+                  await this.$store.state.readList.push(item1.docid)
                 }
-                else if(this.$root._data.readList.indexOf(item1.docid)==-1&&localStorage.getItem("readList").indexOf(item1.docid)==-1){
-                    await this.$root._data.readList.push(item1.docid)
+                else if(this.$store.state.readList.indexOf(item1.docid)==-1&&localStorage.getItem("readList").indexOf(item1.docid)==-1){
+                    await this.$store.state.readList.push(item1.docid)
                  }
-                 //console.log(this.$root._data.collectionList)
+                 //console.log(this.$store.state.collectionList)
                  
-                 await localStorage.setItem("readList",this.$root._data.readList)
+                 await localStorage.setItem("readList",this.$store.state.readList)
                  
                     //console.log(this.detailArticle[0].publishid)
                    // console.log(localStorage.getItem("collectionList"))

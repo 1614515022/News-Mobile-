@@ -23,13 +23,13 @@
             
             </span>
             <span>
-            <img :src="item.photo">
+            <img v-if="$store.state.isPicture==true" :src="item.photo">
+            <img v-else src="../assets/2.jpg" />
             </span>
             
             
         </div> 
     </div>
-    
     <tabbar></tabbar>
   </div>
 </template>
@@ -54,7 +54,12 @@ export default {
         async onSearch(){
             let res = await this.$http.post('/newsFind',this.model.keyWords)
             this.model.newsList = res.data.data
-            console.log(this.model.newsList)
+            //console.log(res.data)  
+            if(res.data.code == 400){
+              this.$msg.fail(res.data.msg)
+            }else{
+              this.$msg.fail('一共有'+this.model.newsList.length+'条结果')
+            }
         }
     },
     created(){

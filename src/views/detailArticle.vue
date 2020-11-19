@@ -51,26 +51,26 @@ export default {
         async collection(){
             
             if(localStorage.getItem("token")){
-                //console.log(this.$root._data.collectionList)
+                //console.log(this.$store.state.collectionList)
 
-                //console.log(this.$root._data.collectionList);
-                //console.log(this.$root._data.collectionList);
-                if(this.$root._data.collectionList.length==0){
-                    await this.$root._data.collectionList.push(localStorage.getItem("collectionList"))
+                //console.log(this.$store.state.collectionList);
+                //console.log(this.$store.state.collectionList);
+                if(this.$store.state.collectionList.length==0){
+                    await this.$store.state.collectionList.push(localStorage.getItem("collectionList"))
                     
                 }
-                console.log(this.$root._data.collectionList);
-                if(this.$root._data.collectionList.indexOf(this.detailArticle[0].publishid)==-1&&localStorage.getItem("collectionList")==null){
-                    await this.$root._data.collectionList.push(this.detailArticle[0].publishid)
+                console.log(this.$store.state.collectionList);
+                if(this.$store.state.collectionList.indexOf(this.detailArticle[0].publishid)==-1&&localStorage.getItem("collectionList")==null){
+                    await this.$store.state.collectionList.push(this.detailArticle[0].publishid)
                  }
-                else if(this.$root._data.collectionList.indexOf(this.detailArticle[0].publishid)==-1&&localStorage.getItem("collectionList").indexOf(this.detailArticle[0].publishid)==-1){
-                    await this.$root._data.collectionList.push(this.detailArticle[0].publishid)
+                else if(this.$store.state.collectionList.indexOf(this.detailArticle[0].publishid)==-1&&localStorage.getItem("collectionList").indexOf(this.detailArticle[0].publishid)==-1){
+                    await this.$store.state.collectionList.push(this.detailArticle[0].publishid)
                  }else{
-                    await this.$root._data.collectionList.splice(this.$root._data.collectionList.indexOf(this.detailArticle[0].publishid),1)
+                    await this.$store.state.collectionList.splice(this.$store.state.collectionList.indexOf(this.detailArticle[0].publishid),1)
                  }
-                 //console.log(this.$root._data.collectionList)
-                 console.log(this.$root._data.collectionList)
-                 await localStorage.setItem("collectionList",this.$root._data.collectionList)
+                 //console.log(this.$store.state.collectionList)
+                 console.log(this.$store.state.collectionList)
+                 await localStorage.setItem("collectionList",this.$store.state.collectionList)
                  
                     //console.log(this.detailArticle[0].publishid)
                    // console.log(localStorage.getItem("collectionList"))

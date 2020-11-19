@@ -39,7 +39,7 @@ export default {
         // this.mainContent = result.data.data
         // this.mainContent = this.spliceArr(this.mainContent)
         // console.log(this.mainContent)
-        
+        console.log(this.$store)
     },
     components:{
         navbar,mainArticle,homeHeader
@@ -88,7 +88,5 @@ export default {
 
 </script>
 <style lang='less' scoped>
-#Home{
-    
-}
+
 </style>

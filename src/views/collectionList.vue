@@ -20,7 +20,8 @@
           
         </span>
         <span>
-          <img :src="item1.photo">
+          <img v-if="$store.state.isPicture==true" :src="item1.photo">
+          <img v-else src="../assets/2.jpg" />
         </span>
         
         
@@ -51,7 +52,7 @@ export default {
         this.collectionData = localStorage.getItem('collectionList')
         //console.log(localStorage.getItem('collectionList'))
         //console.log(this.collectionData)
-        let regex = /iznctkc\d{7}/igs
+        let regex = /izn[a-z]{4}\d{7}/igs
         this.model.collectionList = this.collectionData.match(regex)
 
         //console.log(this.model.collectionList)

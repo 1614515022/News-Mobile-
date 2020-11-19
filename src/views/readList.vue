@@ -20,7 +20,8 @@
           
         </span>
         <span>
-          <img :src="item1.photo">
+          <img v-if="$store.state.isPicture==true" :src="item1.photo">
+          <img v-else src="../assets/2.jpg" />
         </span>
         
         

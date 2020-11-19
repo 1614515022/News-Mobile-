@@ -11,18 +11,12 @@ import './plugins/element.js'
 
 Vue.prototype.$msg = Toast
 Vue.prototype.$http = http
-
+Vue.prototype.$store = store
 
 Vue.use(Vant);
 Vue.config.productionTip = false
 
 new Vue({
-  data:{
-    id:"",
-    collectionList:[],
-    readList:[],
-    isPicture:true,
-  },
   router,
   store,
   render: h => h(App)
